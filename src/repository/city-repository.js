@@ -42,7 +42,7 @@ class CityRepository {
         where: {
              id: cityId }  // Correctly specifying the condition in the where clause
       });
-      return city;
+      return city;    // [numberOfAffectedRows]
     } catch (error) {
       console.error('Something went wrong in the repository layer:', error);
       throw error;

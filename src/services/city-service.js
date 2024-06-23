@@ -1,5 +1,9 @@
 const {cityRepository}=require('../repository/index');
 
+
+// You can instead use functions in place of classes.
+
+
 class CityService{
     constructor(){
         this.cityRepository= new cityRepository
