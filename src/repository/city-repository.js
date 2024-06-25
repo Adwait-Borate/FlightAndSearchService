@@ -55,4 +55,4 @@ class CityRepository {
 
   
 
-module.exports =  CityRepository();  // Correctly export an instance of CityRepository
+module.exports =  CityRepository;  // Correctly export an instance of CityRepository

@@ -6,7 +6,7 @@ const {cityRepository}=require('../repository/index');
 
 class CityService{
     constructor(){
-        this.cityRepository= new cityRepository
+        this.cityRepository= new cityRepository();
     }
 
     async createCity(data){
@@ -57,3 +57,5 @@ class CityService{
     
 }
 
+
+    module.exports={CityService}

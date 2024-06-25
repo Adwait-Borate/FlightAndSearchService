@@ -1,7 +1,7 @@
 
-const CityService = require("./city-service");
+const {CityService} = require("./city-service");
 
 
-modules.export={
-    CityService:require('./city-service')
+module.exports={
+    CityService
 }
