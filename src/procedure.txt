@@ -60,7 +60,7 @@ Options:
   --version  Show version number                                                  [boolean]
   --help     Show help                                                            [boolean]
 
----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
 
 npx sequelize init -> it will create config,migration,seeders and models folder. Place them inside src
 npx sequelize db:create 
@@ -73,4 +73,17 @@ this is bcz migration files give us a 2nd chance whether we want to make any inc
 
 Any change made in the migration file will reflect in the database whereas any chang emade in the models will reflect at the javascript level
 
+
+# TO RUN MIGRATIONS
 npx sequelize db:migrate
+--------------------------------------------------------------------------------------------------------------------
+# TO UNDO CHANGES IN MIGRATION FILES.(You can go n steps ahead in migration and then comeback by undo command)
+npx sequelize db:migrate:undo
+
+
+create a repository file city-repository.js that will contain the actual sql queries (sequelize has it own way of writing queries)
+Follow the documentations
+
+Start writing in the repository file the sequelize sql queries
+
+MODELS-REPOSITORY-SERVICES-CONTROLLERS-API-ROUTES
