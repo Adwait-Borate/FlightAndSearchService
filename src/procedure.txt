@@ -69,3 +69,8 @@ npx sequelize model:generate --name City --attributes name:String, id:int
 -->ALong with this it also creates a migration file
 
 But if you show table, there is now table/data that is created.
+this is bcz migration files give us a 2nd chance whether we want to make any incremnetal changes(CRUD operations and their constraints)
+
+Any change made in the migration file will reflect in the database whereas any chang emade in the models will reflect at the javascript level
+
+npx sequelize db:migrate
