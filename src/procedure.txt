@@ -1,0 +1,71 @@
+npm init
+install packages- body-parser,express,nodemon
+
+create a README.md
+C:.
+├───config
+├───controllers
+├───middlewares
+├───models
+├───repository
+├───routes
+├───services
+└───utils
+
+create a .gitignore file
+don't forget to push the code on github
+
+create server inside index.js file.
+In package.json file write "start": "npx nodemon src/index"
+
+npm i dotenv
+create .env
+create serverConfig.js inside config folder
+
+setup body-parser and its middleware
+
+Setup sequelize(ORM) ---->[INTERVIEW]
+npm i mysql2 sequelize sequelize-cli
+
+mysql2-->provides necessary drivers to connect sequelize to mysql
+sequelize-->ORM map relational model into object oriented model
+sequelize-cli-->setup database configuration all by itself
+
+Sequelize CLI [Node: 10.21.0, CLI: 6.0.0, ORM: 6.1.0]
+
+sequelize <command>
+
+Commands:
+  sequelize db:migrate                        Run pending migrations
+  sequelize db:migrate:schema:timestamps:add  Update migration table to have timestamps
+  sequelize db:migrate:status                 List the status of all migrations
+  sequelize db:migrate:undo                   Reverts a migration
+  sequelize db:migrate:undo:all               Revert all migrations ran
+  sequelize db:seed                           Run specified seeder
+  sequelize db:seed:undo                      Deletes data from the database
+  sequelize db:seed:all                       Run every seeder
+  sequelize db:seed:undo:all                  Deletes data from the database
+  sequelize db:create                         Create database specified by configuration
+  sequelize db:drop                           Drop database specified by configuration
+  sequelize init                              Initializes project
+  sequelize init:config                       Initializes configuration
+  sequelize init:migrations                   Initializes migrations
+  sequelize init:models                       Initializes models
+  sequelize init:seeders                      Initializes seeders
+  sequelize migration:generate                Generates a new migration file      [aliases: migration:create]
+  sequelize model:generate                    Generates a model and its migration [aliases: model:create]
+  sequelize seed:generate                     Generates a new seed file           [aliases: seed:create]
+
+Options:
+  --version  Show version number                                                  [boolean]
+  --help     Show help                                                            [boolean]
+
+---------------------------------------------------------------------------------------------------------------
+
+npx sequelize init -> it will create config,migration,seeders and models folder. Place them inside src
+npx sequelize db:create 
+npx sequelize model:generate --name City --attributes name:String, id:int
+-->It will now create city.js file and index.js file
+-->ALong with this it also creates a migration file
+
+But if you show table, there is now table/data that is created.
