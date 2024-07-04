@@ -13,17 +13,19 @@ class CityRepository {
 
   async deleteCityById(cityId) {
     try {
-      await City.destroy({
-        where: {
-          id: cityId
-        }
+      const result = await City.destroy({
+        where: { id: cityId }
       });
+      if (result === 0) {
+        throw new Error('City not found');
+      }
       return true;
     } catch (error) {
       console.error('Error deleting city:', error);
       throw error;
     }
   }
+  
 
   async getCity(cityId) {
     try {

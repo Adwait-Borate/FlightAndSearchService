@@ -45,24 +45,33 @@ const create = async (req, res) => {
   
 //DELETE -> /city/:id
 const destroy = async (req, res) => {
-    try {
-      const city = await cityService.deleteCity(req.params.id);
-      return res.status(200).json({
-        data: city,
-        success: true,
-        message: "Successfully deleted a city",
-        err: {}
-      });
-    } catch (error) {
-      console.log(error);
-      return res.status(500).json({
+  try {
+    const city = await cityService.deleteCity(req.params.id);
+    if (!city) {
+      return res.status(404).json({
         data: {},
         success: false,
-        message: "Failed to delete a city",
-        err: error.message
+        message: "City not found",
+        err: {}
       });
     }
-  };
+    return res.status(200).json({
+      data: city,
+      success: true,
+      message: "Successfully deleted a city",
+      err: {}
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      data: {},
+      success: false,
+      message: "Failed to delete a city",
+      err: error.message
+    });
+  }
+};
+
   
 
 
