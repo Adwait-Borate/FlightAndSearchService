@@ -1,4 +1,6 @@
 const { City } = require('../models/index');   //in index file it will return all the models that you create,so need to import models individually.
+const { Op } = require("sequelize");
+
 
 class CityRepository {
   async createCity({ name }) {
@@ -51,13 +53,45 @@ class CityRepository {
     }
   }
 
-  async getAllCities(){
-    try{
-     const cities=await City.findAll();
-     return cities;
-    }catch(error){
+//   async getAllCities(filter){
+//     try{
+//       if(filter.name){
+//         const cities=await City.findAll({
+//           where:{
+//             [Op.startsWith]: filter.name
+//           }
+//         });
+//         return cities;
+//       }
+//      const cities=await City.findAll();
+//      return cities;
+//     }catch(error){
+//         console.log("Something went wrong at service layer");
+//         throw{error};
+//     }
+// }
+
+
+
+async getAllCities(filter) {
+  //console.log("Filter received:", filter);
+    try {
+        let cities;
+        if (filter && filter.name) {
+            cities = await City.findAll({
+                where: {
+                    name: {
+                        [Op.startsWith]: filter.name
+                    }
+                }
+            });
+        } else {
+            cities = await City.findAll();
+        }
+        return cities;
+    } catch (error) {
         console.log("Something went wrong at service layer");
-        throw{error};
+        throw { error };
     }
 }
 
