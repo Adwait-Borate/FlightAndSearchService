@@ -103,3 +103,5 @@ npx sequelize model:generate --name Airport --attributes name:String,address:Str
  npx sequelize db:seed:all
 
  By making association and adding dummy data(seeder file) you can easily make "joins" operations on mysql queries
+
+ synchronize ur db in main index.js file and SYNC:true in env file
