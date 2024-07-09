@@ -87,3 +87,12 @@ Follow the documentations
 Start writing in the repository file the sequelize sql queries
 
 MODELS-REPOSITORY-SERVICES-CONTROLLERS-API-ROUTES
+
+For more basic queries in sequelize-
+https://sequelize.org/docs/v6/core-concepts/model-querying-basics/
+
+Now create a new model for airport
+npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
+
+ Relationship -> City has many airports and Airport belongs to a city(one to many)
+ So set association between the 2 tables along with delete cascade
