@@ -96,3 +96,10 @@ npx sequelize model:generate --name Airport --attributes name:String,address:Str
 
  Relationship -> City has many airports and Airport belongs to a city(one to many)
  So set association between the 2 tables along with delete cascade
+
+ npx sequelize seed:generate --name add-airports
+ create a seeder file that will have data/info so that u dont have to create data by calling an api
+
+ npx sequelize db:seed:all
+
+ By making association and adding dummy data(seeder file) you can easily make "joins" operations on mysql queries
